@@ -177,6 +177,7 @@ plat = (
 )
 plat["ROAS"] = plat["revenue"] / plat["spend"]
 plat["CTR"] = plat["clicks"] / plat["impressions"]
+plat["CTR_pct"] = plat["CTR"] * 100
 plat["CPA"] = plat["spend"] / plat["conversions"]
 
 c1, c2, c3 = st.columns(3)
@@ -191,8 +192,9 @@ c2.plotly_chart(
     width="stretch",
 )
 c3.plotly_chart(
-    px.bar(plat, x="platform", y="CTR", color="platform",
-           title="CTR per Platform", text_auto=".3f"),
+    px.bar(plat, x="platform", y="CTR_pct", color="platform",
+           title="CTR per Platform (%)", text_auto=".2f",
+           labels={"CTR_pct": "CTR (%)"}),
     width="stretch",
 )
 
