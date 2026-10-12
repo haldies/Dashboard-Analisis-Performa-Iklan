@@ -1,0 +1,3 @@
+[theme]
+# Kecilkan judul h1 (default 2.75rem). Hanya h1 yang diubah, h2-h6 tetap default.
+headingFontSizes = ["1.6rem"]

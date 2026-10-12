@@ -25,6 +25,25 @@ st.set_page_config(
 st.title("Dashboard Analisis Performa Iklan")
 st.caption("Google Ads · Meta Ads · TikTok Ads — data kampanye harian tahun 2025")
 
+st.markdown(
+    """
+    <style>
+    /* Rapatkan margin atas konten */
+    .block-container { padding-top: 1rem !important; }
+    /* Filter jadi navbar: selalu nempel di atas saat scroll */
+    div[data-testid="stExpander"] {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background-color: var(--secondary-background-color, #f0f2f6);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 DATA_PATH = "data/global_ads_performance_dataset.csv"
 # Fallback: dukung juga file di root proyek (tanpa folder data/)
 if not Path(DATA_PATH).exists() and Path("global_ads_performance_dataset.csv").exists():
