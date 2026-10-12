@@ -453,11 +453,4 @@ st.plotly_chart(
     width="stretch",
 )
 
-# ----------------------------------------------------------------------------
-# Footer
-# ----------------------------------------------------------------------------
-st.divider()
-st.caption(
-    "Sumber: Kaggle Global Ads Performance — dilokalkan (kota Indonesia, "
-    "kategori e-commerce, 2025, Rupiah kurs Rp1.000/USD)."
-)
+
