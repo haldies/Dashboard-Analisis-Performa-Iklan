@@ -191,12 +191,11 @@ c2.plotly_chart(
            title="CPA per Platform (Rp)", text_auto=".2f"),
     width="stretch",
 )
-c3.plotly_chart(
-    px.bar(plat, x="platform", y="CTR_pct", color="platform",
-           title="CTR per Platform (%)", text_auto=".2f",
-           labels={"CTR_pct": "CTR (%)"}),
-    width="stretch",
-)
+fig_ctr = px.bar(plat, x="platform", y="CTR_pct", color="platform",
+                 title="CTR per Platform (%)", text_auto=".2f",
+                 labels={"CTR_pct": "CTR (%)"})
+fig_ctr.update_traces(texttemplate="%{y:.2f}%")
+c3.plotly_chart(fig_ctr, width="stretch")
 
 st.dataframe(
     plat[["platform", "spend", "revenue", "ROAS", "CPA", "CTR", "conversions"]]
